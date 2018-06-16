@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "b45d91fe-ef69-41f8-81fb-e1dcbab7c250",
+		"name": "OctoEvents API",
+		"description": "Octo Events is an application that listens to Github Events via webhooks and expose by an api.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Fetch Events By Issue Number",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_id\": 1,\n\t\"amount\": 1,\n\t\"unit_price\": 10,\n\t\"responsible\": \"Leonardo Giroto\",\n\t\"payment_method\": 1,\n\t\"payment_type\": 1,\n\t\"cash_received\": 100\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/issues/1/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"issues",
+						"1",
+						"events"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
