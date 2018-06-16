@@ -8,7 +8,7 @@ Ruby 2.5.1
 Rails 5.2.0  
 Base de Dados PostgreSQL
 
-## Instalação
+## Instalação e Configuração
 
 ### Instalando as Gems:  
 
@@ -26,6 +26,21 @@ rails db:create
 ```
 rails db:migrate
 ```
+
+### Criando o Webhook
+
+1) No repositório do Github, ir em _Settings > Webhooks_  
+2) Selecionar _Add webhook_  
+3) Em _Payload URL_ incluir a URL da API para o Endpoint de Payload. No caso: _{base_url}/events_  
+4) Definir _Content-Type_ como _application/json_  
+5) Selectionar _Let me select individual events_ e Escolher _Issues_ & _Issue comments_  
+6) Marcar Active no checkbox  
+7) Clicar em _Add Webhook_  
+
+Obs: Para testar o funcionamento do webhook em ambiente de desenvolvimento local, foi utilizado o _ngrok_ (https://ngrok.com/).  
+Para tal, basta instalar o ngrok seguindo as instruções de acordo com o ambiente de desenvolvimento e:  
+1) Colocar para rodar na porta sendo utilizada pelo projeto (neste projeto, a porta 3000): `ngrok http 3000`
+2) Obter a URL disponibilizada pelo _ngrok_ e utilizá-la como _Payload URL_ na configuração do Passo 3.
 
 ## Rodando o Projeto
 
